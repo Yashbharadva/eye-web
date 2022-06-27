@@ -1,0 +1,86 @@
+.navbar {
+    margin-top: 15px;
+    margin-left: -30px;
+
+    .navigation-bar {
+        display: flex;
+        margin-left: 220px;
+        margin-top: -43px;
+
+        .home {
+            margin-left: 15px;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 5px 10px;
+            // background-color: red;
+
+            &:hover {
+                background-color: gray;
+            }
+        }
+
+    }
+
+    img {
+        margin-left: -100rem;
+        margin-top: 1rem;
+        width: 10rem;
+    }
+
+    .logo-search {
+        margin-left: 120px;
+        margin-top: -45px;
+
+        input {
+            margin-left: 40rem;
+            padding: 10px 10px;
+            width: 20rem;
+            outline: none;
+            border: 1px solid #e1e1e1;
+            background-color: white;
+        }
+    }
+
+    .logo {
+        margin-left: 65rem;
+        margin-top: -26px;
+    }
+    .cart-bag{
+        margin-left: 70rem;
+        margin-top: -22px;
+        cursor: pointer;
+
+        &:hover {
+            // background-color: red;
+        }
+    }
+
+    .sign-up{
+        margin-left: 100rem;
+        margin-top: -33px;
+        border: 1px solid black;
+        width: 78px;
+        padding: 9px 10px;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .sign-in{
+        margin-left: 108rem;
+        margin-top: -36px;
+        // border: 1px solid black;
+        width: 78px;
+        padding: 8px 10px;
+        background: #f2f2f2;
+        color: #7d7d7d;
+        border: 1px solid #e1e1e1;
+        cursor: pointer;
+        font-size: 13px;
+    }
+}
+
+*{
+    background-color: #f9f9f9;
+}
