@@ -1,0 +1,58 @@
+.f-product {
+    display: flex;
+    margin-left: 8rem;
+    margin-top: 6rem;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.fetch-item {
+    margin-left: 7rem;
+
+    .fetch {
+        display: block;
+        border: 1px solid #e1e1e1;
+        margin: 25px 15px;
+        // width: 21rem;
+        float: left;
+
+
+        img {
+            width: 335px;
+            height: 225px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+
+        }
+
+        .name-sub {
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            .fetch-name {
+                font-size: 25px;
+                display: flex;
+                margin-left: 20px;
+                font-weight: 400;
+            }
+
+            .fetch-subName {
+                font-size: 14px;
+                display: flex;
+                margin-left: 21px;
+                font-style: italic;
+                color: #818181;
+            }
+        }
+
+        &:hover {
+            transition: all .5s cubic-bezier(.77, 0, .175, 1);
+            transform: scale(1.0100);
+
+            .fetch-name::hover {
+                transition: none;
+                transform: none;
+            }
+        }
+    }
+}
