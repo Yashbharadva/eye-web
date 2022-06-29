@@ -2,6 +2,7 @@ import React from "react";
 import './navbar.styles.scss';
 import { AiOutlineSearch } from "react-icons/ai";
 import {BiShoppingBag} from "react-icons/bi";
+// import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (

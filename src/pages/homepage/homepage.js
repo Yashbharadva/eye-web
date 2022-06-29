@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../../component/navbar/navbar";
-import Banner from "../../component/banner/banner";
-import FeProduct from "../../component/feProduct/feProduct";
-import ReProduct from "../../component/reProduct/reProduct";
-import Footer from "../../component/footer/footer";
+import Navbar from "../../component/homepage-com/navbar/navbar";
+import Banner from "../../component/homepage-com/banner/banner";
+import FeProduct from "../../component/homepage-com/feProduct/feProduct";
+import ReProduct from "../../component/homepage-com/reProduct/reProduct";
+import Footer from "../../component/homepage-com/footer/footer";
 
 const HomePage = () => {
     return(

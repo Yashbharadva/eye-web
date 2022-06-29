@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 import { collection, getDocs } from "firebase/firestore";
 
-import { db } from "../../firebase/firebase.utils";
+import { db } from "../../../firebase/firebase.utils";
 
-import './reProduct.styles.scss';
+import './feProduct.styles.scss';
 
-const ReProduct = () => {
+const FeProduct = () => {
     const [product, setProduct] = useState("");
 
     useEffect(() => {
@@ -16,8 +16,8 @@ const ReProduct = () => {
     useEffect(() => {
     }, [product])
 
-    const getProduct = async () => {
-        const productCollectionRef = await collection(db, 'Featured Products')
+    const getProduct = () => {
+        const productCollectionRef = collection(db, 'Featured Products')
         getDocs(productCollectionRef)
             .then(response => {
                 const pro = response.docs.map(doc => (
@@ -28,13 +28,15 @@ const ReProduct = () => {
             .catch(error => console.log(error.message))
     }
 
+    // console.log(product[0].title);
+
     return (
-        <div className="reproduct">
-            <div className="products">
-                Recommended Products
+        <div className="feprduct">
+            <div className="f-product">
+                Featured Products
             </div>
             <div className="fetch-item">
-                {product[0].title.map(product => (
+                {product[0]?.title.map(product => (
                     <div className="fetch">
                         <img src={product.imageUrl} key={product.id} alt="" />
                         <div className="name-sub">
@@ -47,5 +49,4 @@ const ReProduct = () => {
         </div>
     )
 }
-
-export default ReProduct;
+export default FeProduct;
