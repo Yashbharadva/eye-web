@@ -6,12 +6,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Router basename="/tothepoint_login">
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/sign-up" component={signUp} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/sign-up" component={signUp} />
+      </Switch>
     </div>
   );
 }
