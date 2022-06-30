@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.d814d7aa.css",
-    "main.js": "/static/js/main.e7d48167.js",
-    "static/js/787.3dd5b190.chunk.js": "/static/js/787.3dd5b190.chunk.js",
-    "index.html": "/index.html",
-    "main.d814d7aa.css.map": "/static/css/main.d814d7aa.css.map",
-    "main.e7d48167.js.map": "/static/js/main.e7d48167.js.map",
-    "787.3dd5b190.chunk.js.map": "/static/js/787.3dd5b190.chunk.js.map"
+    "main.css": "/eye-web/static/css/main.d814d7aa.css",
+    "main.js": "/eye-web/static/js/main.16d2070b.js",
+    "static/js/787.3dd5b190.chunk.js": "/eye-web/static/js/787.3dd5b190.chunk.js",
+    "index.html": "/eye-web/index.html",
+    "main.d814d7aa.css.map": "/eye-web/static/css/main.d814d7aa.css.map",
+    "main.16d2070b.js.map": "/eye-web/static/js/main.16d2070b.js.map",
+    "787.3dd5b190.chunk.js.map": "/eye-web/static/js/787.3dd5b190.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d814d7aa.css",
-    "static/js/main.e7d48167.js"
+    "static/js/main.16d2070b.js"
   ]
 }
