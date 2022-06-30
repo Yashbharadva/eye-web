@@ -8,7 +8,7 @@ import {BiShoppingBag} from "react-icons/bi";
 const AnotherNavbar = () => {
     return (
         <div className="another-navbar">
-            <div className="navbar">
+            <div className="navbar-ano">
                 <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" />
                 <ul className="navigation-bar">
                     <ui className="home">Home</ui>
