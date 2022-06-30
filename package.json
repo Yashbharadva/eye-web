@@ -1,7 +1,7 @@
 {
   "name": "eye-web",
   "version": "0.1.0",
-  "private": "false",
+  "private": "true",
   "homepage": "http://Yashbharadva.github.io/eye-web",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
