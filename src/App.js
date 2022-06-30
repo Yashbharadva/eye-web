@@ -6,10 +6,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <HashRouter>
+      <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sign-up" component={signUp} />
-      </HashRouter>
+      </Switch>
     </div>
   );
 }
