@@ -1,13 +1,15 @@
 import React from "react";
 import './navbar.styles.scss';
 import { AiOutlineSearch } from "react-icons/ai";
-import {BiShoppingBag} from "react-icons/bi";
+import { BiShoppingBag } from "react-icons/bi";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
         <div className="navbar">
-            <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" />
+            <a href="/">
+            <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" /> </a>
             <ul className="navigation-bar">
                 <ui className="home">Home</ui>
                 <ui className="home">Shop</ui>
@@ -21,13 +23,15 @@ const Navbar = () => {
                 <AiOutlineSearch />
             </div>
             <div className="cart-bag">
-            <BiShoppingBag size="22px"/>
+                <BiShoppingBag size="22px" />
             </div>
-            <div className="sign-up">
-                Sign-up
-            </div>
-            <div className="sign-in">
-                Sign-in
+            <div className="sign-up-in">
+                <Link className="sign-up" to="sign-up">
+                    Sign-up
+                </Link>
+                <div className="sign-in">
+                    Sign-in
+                </div>
             </div>
         </div>
     )

@@ -3,9 +3,10 @@
     margin-left: -30px;
     margin-top: -8rem;
     width: 122rem;
-    background-color: #f2f2f2;
+    background-color: white;
     position: fixed;
     height: 6rem;
+    z-index: 20;
 
     .navigation-bar {
         display: flex;
@@ -48,41 +49,41 @@
 
     .logo {
         margin-left: 65rem;
-        margin-top: -26px;
+        margin-top: -2rem;
     }
-    .cart-bag{
+
+    .cart-bag {
         margin-left: 70rem;
         margin-top: -22px;
         cursor: pointer;
+    }
 
-        &:hover {
-            // background-color: red;
+    .sign-up-in {
+        // background-color: aqua;
+        margin-top: -2rem;
+        .sign-up {
+            margin-left: 85rem;
+            border: 1px solid black;
+            width: 78px;
+            padding: 9px 10px;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+            font-size: 13px;
         }
-    }
 
-    .sign-up{
-        margin-left: 100rem;
-        margin-top: -45px;
-        border: 1px solid black;
-        width: 78px;
-        padding: 9px 10px;
-        color: white;
-        background-color: black;
-        cursor: pointer;
-        font-size: 13px;
-    }
-
-    .sign-in{
-        margin-left: 108rem;
-        margin-top: -40px;
-        // border: 1px solid black;
-        width: 78px;
-        padding: 8px 10px;
-        background: #f2f2f2;
-        color: #7d7d7d;
-        border: 1px solid #e1e1e1;
-        cursor: pointer;
-        font-size: 13px;
+        .sign-in {
+            margin-left: 108rem;
+            margin-top: -32px;
+            // border: 1px solid black;
+            width: 78px;
+            padding: 8px 10px;
+            background: #f2f2f2;
+            color: #7d7d7d;
+            border: 1px solid #e1e1e1;
+            cursor: pointer;
+            font-size: 13px;
+        }
     }
 }
 

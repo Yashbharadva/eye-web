@@ -12,15 +12,15 @@ const Facebook = () => {
         <div className="facebook">
             <div className="but-face">
             <FaFacebookF />
-                Connect with Facebook
+                Continue with Facebook
             </div>
             <div className="but-goo">
             <AiOutlineGoogle />
-                Connect with Google
+                Continue with Google
             </div>
             <div className="but-git">
             <AiFillGithub />
-                Connect with Github
+                Continue with Github
             </div>
             <div className="or-style">
                 Or

@@ -1,144 +1,145 @@
-import React, { useEffect, useState, useHistory } from "react";
+import React from "react";
+import { useState } from "react";
 import 'antd/dist/antd.css';
 // import './index.css';
 import { Button, Form, Input } from 'antd';
 import './signUpBar.styles.scss';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../../../firebase/firebase.utils";
+import { useHistory } from "react-router-dom";
 
 // import Firebase from "../../../firebase/firebase.utils";
 
 // import { Database } from "firebase/database";
 // import {ref,push,child,update} from "firebase/database";
-import auth from "../../../firebase/firebase.utils";
+// import auth from "../../../firebase/firebase.utils";
 
 const Navigation = () => {
-//     const [loading, setLoading] = useState(false);
-//     const [authenticating, setAuthenticating] = useState(false);
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+   const [loading, setLoading] = useState(false);
+   const [error, setError] = useState(true);
+   const history = useHistory()
 
-//   const [registering, setRegistering] = useState(false);
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   // const [confirm, setConfirm] = useState<string>('');
-//   const [error, setError] = useState('');
-//   const history = useHistory();
+   const handleSignup = (e) =>{
+    setLoading(true);
+     e.preventDefault();
 
-//   const signUpWithEmailAndPassword = () => {
+     createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user)
+        history.push("/")
+        
+     })
+     .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+     });
+    //  setEmail("")
+    //  console.log(email)
+    //     setPassword("")
+   }
 
-    // if (password !== confirm) 
-    // {
-    //   setError('Please make sure your passwords match.');
+        const onFinish = (values) => {
+            console.log('Success:', values);
+        };
 
-    // }
+        const onFinishFailed = (errorInfo) => {
+            console.log('Failed:', errorInfo);
+        };
 
-    // if (error !== '') setError('');
+        return (
+            <div className='all-box'>
+                <div className="sign-up-bar">
+                    <Form
+                        name="basic"
+                        labelCol={{span: 8,}}
+                        wrapperCol={{span: 5,}}
+                        initialValues={{remember: true,}}
+                        onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
+                        autoComplete="off"
+                        >
 
-    // setRegistering(true);
+                        <Form.Item
+                            label="Full Name"
+                            name="username"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your username!',
+                                },
+                            ]}
+                        // value={props.user}
+                        // onChange={(e) => setUser(e.target.value)}
+                        >
+                            <Input />
+                        </Form.Item>
 
-    // auth.createUserWithEmailAndPassword(email, password)
-    //   .then(result => {
-    //     history.push('/HomePage');
-    //     localStorage.setItem('login', 'true')
-    //   })
-    //   .catch(error => {
-
-    //     if (error.code.includes('auth/weak-password')) {
-    //       setError('Please Enter a Stronger Password.');
-    //     }
-    //     else if (error.code.includes('auth/email-already-in-use')) {
-    //       setError('Email alreday in Use.')
-    //     }
-    //     else {
-    //       setError('Unable to Register.Please Try again later');
-    //     }
-    //     setRegistering(false);
-    //   });
-
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-    
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
-    
-    return (
-        <div className='all-box'>
-            <div className="sign-up-bar">
-                <Form
-                    name="basic"
-                    labelCol={{
-                        span: 8,
-                    }}
-                    wrapperCol={{
-                        span: 5,
-                    }}
-                    initialValues={{
-                        remember: true,
-                    }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                    autoComplete="off"
-                >
-
-                    <Form.Item
-                        label="Full Name"
-                        name="username"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your username!',
-                            },
-                        ]}
-                    // value={props.user}
-                    // onChange={(e) => setUser(e.target.value)}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Email"
-                        name="email"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your email!',
-                            },
-                        ]}
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
-                    >
-                        <Input />
-                    </Form.Item>
-                    <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your password!',
-                            },
-                        ]}
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
-                    >
-                        <Input.Password />
-                    </Form.Item>
+                        <Form.Item
+                            label="Email"
+                            name="email"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your email!',
+                                },
+                            ]}
+                            type="email"
+                            placeholder="john Doe"
+                            onChange={(e) => setEmail(e.target.value)}
+                            // value={email}
+                            // onChange={(e) => setEmail(e.target.value)}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            label="Password"
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your password!',
+                                },
+                            ]}
+                            type="password"
+                            placeholder="Your password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            // value={password}
+                            // onChange={(e) => setPassword(e.target.value)}
+                        >
+                            <Input.Password />
+                        </Form.Item>
 
 
-                    <Form.Item
-                        wrapperCol={{
-                            offset: 8,
-                            span: 9,
-                        }}
-                    > <Button 
-                    // onClick={() => signUpWithEmailAndPassword()}
-                        className="button-up" type="primary" htmlType="submit">
-                            Sign Up
-                        </Button>
-                    </Form.Item>
-                </Form>
+                        <Form.Item
+                            wrapperCol={{
+                                offset: 8,
+                                span: 9,
+                            }}
+                        > 
+                        
+                        {!loading && (<Button
+                            onClick={handleSignup}
+                            // onClick={() => signUpWithEmailAndPassword()}
+                            className="button-up" type="primary " htmlType="submit">
+                                Sign Up
+                            </Button>
+                            )}
+                            {loading && (
+                                <Button
+                                onClick={handleSignup}
+                                // onClick={() => signUpWithEmailAndPassword()}
+                                className="button-up" type="primary " htmlType="submit" disabled>
+                                    Loading...
+                                </Button>
+                            )}
+                            {!error && (<span>Wrong email id and password</span>)}
+                        </Form.Item>
+                    </Form>
+                </div>
             </div>
-        </div>
-    )
-}
-
-export default Navigation;
+        )
+    }
+    export default Navigation;
