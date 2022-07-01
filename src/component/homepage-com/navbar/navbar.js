@@ -27,10 +27,10 @@ const Navbar = () => {
                 <BiShoppingBag size="22px" />
             </div>
             <div className="sign-up-in">
-                <Link className="sign-up" to="sign-up">
+                <Link className="sign-up" to="/sign-up">
                     Sign-up
                 </Link>
-                <Link className="sign-in" to="sign-in">
+                <Link className="sign-in" to="/sign-in">
                     Sign-in
                 </Link>
             </div>
