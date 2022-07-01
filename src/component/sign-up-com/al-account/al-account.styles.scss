@@ -1,0 +1,29 @@
+.al-account {
+    // display: flex;
+    margin-top: 18.1rem;
+    margin-left: 28rem;
+    background: #f2f2f2;
+    border: 1px solid #c5c5c5;
+    width: 65rem;
+    padding: 25px 15px;
+
+    .already {
+        // margin-right: -15rem;
+        color: #4a4a4a;
+        font-size: 0.8rem;
+
+        .button-in {
+            border: 1px solid #e1e1e1;
+            color: #4a4a4a;
+            width: 10%;
+            padding: 8px 10px;
+            margin-left: 1rem;
+            margin-top: -1.85rem;
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(199, 197, 197);
+            }
+        }
+    }
+}

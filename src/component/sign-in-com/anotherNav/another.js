@@ -11,7 +11,7 @@ const AnotherNavbar = () => {
     return (
         <div className="another-navbar">
             <div className="navbar-ano">
-            <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("")}/>
+            <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")}/>
                 <ul className="navigation-bar">
                     <ui className="home">Home</ui>
                     <ui className="home">Shop</ui>

@@ -63,7 +63,7 @@ const Navigation = () => {
                         autoComplete="off"
                         >
 
-                        <Form.Item
+                        {/* <Form.Item
                             label="Full Name"
                             name="username"
                             rules={[
@@ -75,7 +75,7 @@ const Navigation = () => {
                             onChange={(e) => setUser(e.target.value)}
                         >
                             <Input />
-                        </Form.Item>
+                        </Form.Item> */}
 
                         <Form.Item
                             label="Email"
@@ -124,7 +124,7 @@ const Navigation = () => {
                             onClick={handleSignup}
                             // onClick={() => signUpWithEmailAndPassword()}
                             className="button-up" type="primary " htmlType="submit">
-                                Sign Up
+                                Sign In
                             </Button>
                             )}
                             {loading && (
