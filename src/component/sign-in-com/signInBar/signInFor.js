@@ -3,8 +3,8 @@ import { useState } from "react";
 import 'antd/dist/antd.css';
 // import './index.css';
 import { Button, Form, Input } from 'antd';
-import './signUpBar.styles.scss';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import './signInBar.styles.scss';
+import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../../../firebase/firebase.utils";
 import { useHistory } from "react-router-dom";
 
@@ -15,18 +15,17 @@ import { useHistory } from "react-router-dom";
 // import auth from "../../../firebase/firebase.utils";
 
 const Navigation = () => {
-    const [user, setUser] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [loading, setLoading] = useState(false);
-   const [error, setError] = useState(true);
+//    const [error, setError] = useState(true);
    const history = useHistory()
 
-   const handleSignup = (e) =>{
+   const handleLogin = (e) =>{
     setLoading(true);
      e.preventDefault();
 
-     createUserWithEmailAndPassword(auth, user, email, password)
+     signInWithEmailAndPassword(auth, email, password)
      .then((userCredential) => {
         const user = userCredential.user;
         console.log(user)
@@ -121,7 +120,7 @@ const Navigation = () => {
                         > 
                         
                         {!loading && (<Button
-                            onClick={handleSignup}
+                            onClick={handleLogin}
                             // onClick={() => signUpWithEmailAndPassword()}
                             className="button-up" type="primary " htmlType="submit">
                                 Sign In
@@ -129,13 +128,13 @@ const Navigation = () => {
                             )}
                             {loading && (
                                 <Button
-                                onClick={handleSignup}
+                                onClick={handleLogin}
                                 // onClick={() => signUpWithEmailAndPassword()}
                                 className="button-up" type="primary " htmlType="submit" disabled>
                                     Loading...
                                 </Button>
                             )}
-                            {!error && (<span>Wrong email id and password</span>)}
+                            {/* {!error && (<span>Wrong email id and password</span>)} */}
                         </Form.Item>
                     </Form>
                 </div>

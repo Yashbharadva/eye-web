@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import 'antd/dist/antd.css';
-// import './index.css';
+import 'antd/dist/antd.min.css';
 import { Button, Form, Input } from 'antd';
 import './signUpBar.styles.scss';
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -135,7 +134,7 @@ const Navigation = () => {
                                     Loading...
                                 </Button>
                             )}
-                            {!error && (<span>Wrong email id and password</span>)}
+                            {error && (<span>*Wrong email id and password*</span>)}
                         </Form.Item>
                     </Form>
                 </div>

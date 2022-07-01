@@ -7,9 +7,9 @@ const Alaccount = () => {
     return (
         <div className="al-account">
             <div className="already">
-                Already have an account?
-            <Link className="button-in" to="sign-in">
-                Sign in 
+                Don't have an account?
+            <Link className="button-up" to="sign-up">
+                Sign up 
             </Link>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import './another.styles.scss';
 
 import { AiOutlineSearch } from "react-icons/ai";
@@ -27,9 +27,9 @@ const AnotherNavbar = () => {
                 <div className="cart-bag">
                     <BiShoppingBag size="22px" />
                 </div>
-                <div className="sign-in">
-                    Sign-in
-                </div>
+                <Link className="sign-up" to="/sign-up">
+                    Sign-up
+                </Link>
             </div>
         </div>
     )
