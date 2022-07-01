@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 // import auth from "../../../firebase/firebase.utils";
 
 const Navigation = () => {
-    const [user, setUser] = useState("");
+    // const [user, setUser] = useState("");
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const Navigation = () => {
     setLoading(true);
      e.preventDefault();
 
-     createUserWithEmailAndPassword(auth, user, email, password)
+     createUserWithEmailAndPassword(auth, email, password)
      .then((userCredential) => {
         const user = userCredential.user;
         console.log(user)
@@ -72,7 +72,7 @@ const Navigation = () => {
                                     message: 'Please input your username!',
                                 },
                             ]}
-                            onChange={(e) => setUser(e.target.value)}
+                            // onChange={(e) => setUser(e.target.value)}
                         >
                             <Input />
                         </Form.Item>
