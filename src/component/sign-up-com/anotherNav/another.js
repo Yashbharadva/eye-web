@@ -27,7 +27,7 @@ const AnotherNavbar = () => {
                 <div className="cart-bag">
                     <BiShoppingBag size="22px" />
                 </div>
-                <div className="sign-in">
+                <div className="sign-in" onClick={() => history.push("/sign-in")}>
                     Sign-in
                 </div>
             </div>
