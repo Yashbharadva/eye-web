@@ -21,10 +21,16 @@ const Navigation = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const history = useHistory()
+    // const [value, setValue] = useState({
+    //     username: "",
+    //     email: "",
+    //     password: "",
+    // });
 
     const handleSignup = (e) => {
         setLoading(true);
         e.preventDefault();
+        // localStorage.setItem('Email');
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -51,10 +57,22 @@ const Navigation = () => {
         console.log('Failed:', errorInfo);
     };
 
+    // const validateMessages = {
+    //     required: '${label} is required!',
+    //     types: {
+    //         email: '${label} is not a valid email!',
+    //         // password: '${label} is not valid password',
+    //         // text: '${label} is not valid Username'
+    //     },
+    //     number: {
+    //         range: '${label} must be between ${min} and ${max}',
+    //     },
+    // };
+
     return (
         <div className='all-box'>
             <div className="sign-up-bar">
-                <Form
+                {/* <Form validateMessages={validateMessages}
                     name="basic"
                     labelCol={{ span: 8, }}
                     wrapperCol={{ span: 11, }}
@@ -71,30 +89,28 @@ const Navigation = () => {
                             {
                                 required: true,
                                 message: 'Please input your username!',
+                                // type: 'text',
                             },
                         ]}
-                    // onChange={(e) => setUser(e.target.value)}
+                        value={value.username}
                     >
                         <Input />
                     </Form.Item>
 
                     <Form.Item
+                        name={['user', 'email']}
                         label="Email"
-                        name="email"
                         rules={[
-                            {
-                                required: true,
-                                message: 'Please input your email!',
+                            {   required: true,
+                                type: 'email',
                             },
                         ]}
-                        type="email"
-                        placeholder="john Doe"
+                        // value={value.email}
                         onChange={(e) => setEmail(e.target.value)}
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
                     >
                         <Input />
                     </Form.Item>
+
                     <Form.Item
                         label="Password"
                         name="password"
@@ -102,13 +118,14 @@ const Navigation = () => {
                             {
                                 required: true,
                                 message: 'Please input your password!',
+                                // type: 'password',
                             },
                         ]}
+                        value={value.password}
                         type="password"
                         placeholder="Your password"
                         onChange={(e) => setPassword(e.target.value)}
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
+
                     >
                         <Input.Password />
                     </Form.Item>
@@ -123,21 +140,96 @@ const Navigation = () => {
 
                         {!loading && (<Button
                             onClick={handleSignup}
-                            className="button-up" type="primary " htmlType="submit">
+                            className="button-up" type="primary " htmlType="submit" >
                             Sign Up
                         </Button>
-                        
+
                         )}
                         {loading && (
                             <Button
                                 onClick={handleSignup}
                                 className="button-up" type="primary " htmlType="submit" disabled>
-                                Loading...
+                                Sign Up...
                             </Button>
                         )}
                         <div style={{ width: "100%", textAlign: "center" }}>
                             <ErrorText error={error} />
                         </div>
+                    </Form.Item>
+                </Form> */}
+
+
+
+
+
+
+                <Form onSubmit={handleSignup}
+                    name="basic"
+                    labelCol={{
+                        span: 8,
+                    }}
+                    wrapperCol={{
+                        span: 11,
+                    }}
+                    initialValues={{
+                        remember: true,
+                    }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
+                >
+                    <Form.Item 
+                        label="Username"
+                        name="username"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your username!',
+                            },
+                        ]}
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your Email!',
+                                type: 'email',
+                            },
+                        ]}
+                        onChange={(e) => setEmail(e.target.value)}
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Password"
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your password!',
+                            },
+                        ]}
+                        onChange={(e) => setPassword(e.target.value)}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+
+
+                    <Form.Item
+                        wrapperCol={{
+                            offset: 8,
+                            span: 9,
+                        }}
+                    >
+                        <Button type="primary" htmlType="submit" >
+                            Submit
+                        </Button>
                     </Form.Item>
                 </Form>
             </div>

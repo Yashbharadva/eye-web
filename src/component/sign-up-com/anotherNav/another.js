@@ -14,7 +14,7 @@ const AnotherNavbar = () => {
             <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")}/>
                 <ul className="navigation-bar">
                     <ui className="home" onClick={() => history.push("/")}>Home</ui>
-                    <ui className="home">Shop</ui>
+                    <ui className="home" onClick={() => history.push("/shop-page")}>Shop</ui>
                     <ui className="home">Featured</ui>
                     <ui className="home">Recommended</ui>
                 </ul>

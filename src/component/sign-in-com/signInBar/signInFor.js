@@ -26,6 +26,7 @@ const Navigation = () => {
     const handleLogin = (e) => {
         setLoading(true);
         e.preventDefault();
+        // localStorage.setItem('Email');
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -120,19 +121,19 @@ const Navigation = () => {
                         }}
                     >
 
-                        {!loading && (<Button
-                            onClick={handleLogin}
+                        <Button
+                            // onClick={handleLogin}
                             className="button-up" type="primary " htmlType="submit">
                             Sign In
                         </Button>
-                        )}
-                        {loading && (
+                        
+                        {/* {loading && (
                             <Button
                                 onClick={handleLogin}
                                 className="button-up" type="primary " htmlType="submit" disabled>
                                 Loading...
                             </Button>
-                        )}
+                        )} */}
                         <div style={{ width: "100%", textAlign: "center" }}>
                             <ErrorText error={error} />
                         </div>
