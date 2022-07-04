@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/eye-web/static/css/main.5ecba917.css",
-    "main.js": "/eye-web/static/js/main.0e322121.js",
+    "main.css": "/eye-web/static/css/main.238e5c36.css",
+    "main.js": "/eye-web/static/js/main.8acc9061.js",
     "static/js/787.3dd5b190.chunk.js": "/eye-web/static/js/787.3dd5b190.chunk.js",
     "index.html": "/eye-web/index.html",
-    "main.5ecba917.css.map": "/eye-web/static/css/main.5ecba917.css.map",
-    "main.0e322121.js.map": "/eye-web/static/js/main.0e322121.js.map",
+    "main.238e5c36.css.map": "/eye-web/static/css/main.238e5c36.css.map",
+    "main.8acc9061.js.map": "/eye-web/static/js/main.8acc9061.js.map",
     "787.3dd5b190.chunk.js.map": "/eye-web/static/js/787.3dd5b190.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ecba917.css",
-    "static/js/main.0e322121.js"
+    "static/css/main.238e5c36.css",
+    "static/js/main.8acc9061.js"
   ]
 }
