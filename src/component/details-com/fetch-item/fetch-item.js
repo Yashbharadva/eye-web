@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 
+import './fetch-item.styles.scss';
 import { collection, getDocs } from "firebase/firestore";
 
 import { db } from "../../../firebase/firebase.utils";
 
-import './reProduct.styles.scss';
+// import './feProduct.styles.scss';
+import { Link } from "react-router-dom";
 
-const ReProduct = () => {
+const FetchItem = () => {
+
     const [product, setProduct] = useState("");
+
+    
 
     useEffect(() => {
         getProduct()
@@ -29,17 +34,14 @@ const ReProduct = () => {
     }
 
     return (
-        <div className="reproduct">
-            <div className="products">
-                Recommended Products
-            </div>
+        <div className="fetch-the">
             <div className="fetch-item">
-                {product[1]?.title_two.map(product => (
+                {product[0]?.title.map(product => (
                     <div className="fetch">
                         <img src={product.imageUrl} key={product.id} alt="" />
                         <div className="name-sub">
-                        <div className="fetch-name" key={product.id}>{product.name}</div>
-                        <div className="fetch-subName" key={product.id}>{product.subName}</div>
+                            <div className="fetch-name" key={product.id}>{product.name}</div>
+                            <div className="fetch-subName" key={product.id}>{product.subName}</div>
                         </div>
                     </div>
                 ))}
@@ -47,5 +49,4 @@ const ReProduct = () => {
         </div>
     )
 }
-
-export default ReProduct;
+export default FetchItem;

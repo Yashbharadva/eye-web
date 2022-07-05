@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './nav-shop.styles.scss';
+import './details-nav.styles.scss';
 import { AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
@@ -8,7 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 // import { Link } from "react-router-dom";
 
-const NavShop = () => {
+const DetailsNav = () => {
     const history = useHistory();
     const [search, setSearch] = useState("");
     const [product, setProduct] = useState("");
@@ -70,9 +70,10 @@ const NavShop = () => {
                 </form>
             {/* </div> */}
             <div className="all-in">
-                <div className="filter">
+
+                {/* <div className="filter">
                     Filter <AiOutlineFilter />
-                </div>
+                </div> */}
                 <div className="logo">
                     <AiOutlineSearch />
                 </div>
@@ -106,4 +107,4 @@ const NavShop = () => {
     )
 }
 
-export default NavShop;
+export default DetailsNav;

@@ -5,9 +5,16 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase/firebase.utils";
 
 import './feProduct.styles.scss';
+import { Link } from "react-router-dom";
 
 const FeProduct = () => {
     const [product, setProduct] = useState("");
+    // console.log(product);
+
+    // const addedItem = (title.id).find(obj => {
+    //     return obj.id === title.id
+    // })
+    // console.log(addedItem);
 
     useEffect(() => {
         getProduct()
@@ -24,6 +31,7 @@ const FeProduct = () => {
                     doc.data()
                 ))
                 setProduct(pro)
+               
             })
             .catch(error => console.log(error.message))
     }
@@ -37,13 +45,13 @@ const FeProduct = () => {
             </div>
             <div className="fetch-item">
                 {product[0]?.title.map(product => (
-                    <div className="fetch">
-                        <img src={product.imageUrl} key={product.id} alt="" />
+                    <Link className="fetch" to={`/product/${product.id}`}>
+                        <img src={`${product.imageUrl}`} key={product.id} alt="" />
                         <div className="name-sub">
-                        <div className="fetch-name" key={product.id}>{product.name}</div>
-                        <div className="fetch-subName" key={product.id}>{product.subName}</div>
+                            <div className="fetch-name" key={product.id}>{product.name}</div>
+                            <div className="fetch-subName" key={product.id}>{product.subName}</div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

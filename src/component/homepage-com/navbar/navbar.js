@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="navbar">
             <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")} />
             <ul className="navigation-bar">
-                <ui className="home">Home</ui>
+                <ui className="home" onClick={() => history.push("/")}>Home</ui>
                 <ui className="home" onClick={() => history.push("/shop-page")}>Shop</ui>
                 <ui className="home">Featured</ui>
                 <ui className="home">Recommended</ui>
@@ -40,14 +40,14 @@ const Navbar = () => {
             </div>
             {/* {!localStorage.getItem("Email") ? */}
             <div className="sign-up-in">
-                    <Link className="sign-up" to="/sign-up">
-                        Sign-up
-                    </Link>
-                    <Link className="sign-in" to="/sign-in">
-                        Sign-in
-                    </Link>
-                </div>
-                {/* (
+                <Link className="sign-up" to="/sign-up">
+                    Sign-up
+                </Link>
+                <Link className="sign-in" to="/sign-in">
+                    Sign-in
+                </Link>
+            </div>
+            {/* (
                     <div className="log-out" onClick={remove}>
                         LogOut
                     </div>
