@@ -9,12 +9,6 @@ import { Link } from "react-router-dom";
 
 const FeProduct = () => {
     const [product, setProduct] = useState("");
-    // console.log(product);
-
-    // const addedItem = (title.id).find(obj => {
-    //     return obj.id === title.id
-    // })
-    // console.log(addedItem);
 
     useEffect(() => {
         getProduct()

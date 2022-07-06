@@ -3,14 +3,42 @@ import './navbar.styles.scss';
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
+import { Button, Drawer, Radio, Space } from 'antd';
 
 // import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
-    const remove = () => {
-        // localStorage.removeItem('Email');
+    const [search, setSearch] = useState("");
+    const handleSearch = (e) => {
+        e.preventDefault();
+        history.push(`/search?product=${search}`);
+        setSearch("");
     };
+
+    const [visible, setVisible] = useState(false);
+    const [placement, setPlacement] = useState('right');
+    const [open, setOpen] = React.useState(false);
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onChange = (e) => {
+        setPlacement(e.target.value);
+    };
+
+    const onClose = () => {
+        setVisible(false);
+    };
+
+    // const handleOpen = key => {
+    //     setOpen(true);
+    //     setPlacement(key);
+    //   };
+
+    // const remove = () => {
+        // localStorage.removeItem('Email');
+    // };
     // const [items, setItems] = useState("");
 
     // useEffect(() => {
@@ -29,14 +57,45 @@ const Navbar = () => {
                 <ui className="home">Featured</ui>
                 <ui className="home">Recommended</ui>
             </ul>
-            <div className="logo-search">
-                <input className="serach-type" type="search" placeholder="Search product.." />
-            </div>
+
+            <form onSubmit={handleSearch}>
+                <div className="logo-search">
+                    <input
+                        className="serach-type"
+                        type="search"
+                        placeholder="Search product.."
+                        onChange={(e) => setSearch(e.target.value)}
+                        value={search}
+                    />
+                </div>
+            </form>
             <div className="logo">
                 <AiOutlineSearch />
             </div>
-            <div className="cart-bag">
+            <div className="cart-bag" onClick={showDrawer}>
                 <BiShoppingBag size="22px" />
+
+                <Drawer 
+                    // title="Drawer with extra actions"
+                    placement={placement}
+                    width={500}
+                    onClose={onClose}
+                    visible={visible}
+                    extra={
+                        <Space>
+                        {/* <> */}
+                            <Button onClick={() => setOpen(false)}>Close</Button>
+                            <Button type="primary" onClick={() => setOpen(false)}>
+                                Clear Basket
+                            </Button>
+                            {/* </> */}
+                        </Space>
+                    }
+                >
+                    <p>Basket is Empty.</p>
+                    {/* <p>Some contents...</p>
+                    <p>Some contents...</p> */}
+                </Drawer>
             </div>
             {/* {!localStorage.getItem("Email") ? */}
             <div className="sign-up-in">

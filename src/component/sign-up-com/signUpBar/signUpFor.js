@@ -161,7 +161,7 @@ const Navigation = () => {
 
 
 
-
+                {/* <form onSubmit={handleSignup}> */}
 
                 <Form onSubmit={handleSignup}
                     name="basic"
@@ -232,6 +232,7 @@ const Navigation = () => {
                         </Button>
                     </Form.Item>
                 </Form>
+                {/* </form> */}
             </div>
         </div>
     )

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import './nav-shop.styles.scss';
+// import './nav-shop.styles.scss';
 import { AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
 import { db } from "../../../firebase/firebase.utils";
 import { collection, getDocs } from "firebase/firestore";
+import './search-data.styles.scss';
+
 
 // import { Link } from "react-router-dom";
 
-const NavShop = () => {
+const SearchData = () => {
     const history = useHistory();
     const [search, setSearch] = useState("");
     const [product, setProduct] = useState("");
@@ -48,12 +50,12 @@ const NavShop = () => {
     //         setItems(items);
     //     }
     // }, []);
-    
+
     return (
-        <div className="navbar-shop">
+        <div className="search-data">
             <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")} />
             <ul className="navigation-bar">
-            <ui className="home" onClick={() => history.push("/")}>Home</ui>
+                <ui className="home" onClick={() => history.push("/")}>Home</ui>
                 <ui className="home" onClick={() => history.push("/shop-page")}>Shop</ui>
                 <ui className="home">Featured</ui>
                 <ui className="home">Recommended</ui>
@@ -64,15 +66,12 @@ const NavShop = () => {
                     className="serach-type"
                     type="search"
                     placeholder="Search product.."
-                    onChange={(e) =>  setSearch(e.target.value)}
-                    value = {search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
                 />
-                </form>
+            </form>
             {/* </div> */}
             <div className="all-in">
-                <div className="filter">
-                    Filter <AiOutlineFilter />
-                </div>
                 <div className="logo">
                     <AiOutlineSearch />
                 </div>
@@ -106,4 +105,4 @@ const NavShop = () => {
     )
 }
 
-export default NavShop;
+export default SearchData;

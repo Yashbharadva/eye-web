@@ -8,6 +8,15 @@ import './shopPage-main.styles.scss';
 
 const ShopPageMain = () => {
     const [product, setProduct] = useState("");
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    };
 
     useEffect(() => {
         getProduct()
@@ -28,14 +37,10 @@ const ShopPageMain = () => {
             .catch(error => console.log(error.message))
     }
 
-    // console.log(product[0].title);
-
     return (
         <div className="fetch-shop">
-            {/* <div className="shop-product">
-                Featured Products
-            </div> */}
-            <div className="fetch-item">
+        
+            <div className="fetch-item" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 {product[0]?.Shop.map(product => (
                     <div className="fetch-img">
                         <img src={product.imageUrl} key={product.id} alt="" />
@@ -43,11 +48,42 @@ const ShopPageMain = () => {
                             <div className="fetch-shop-name" key={product.id}>{product.name}</div>
                             <div className="fetch-shop-subName" key={product.id}>{product.subName}</div>
                             <div className="fetch-shop-price" key={product.id}>${product.price}.00</div>
+                            {isHovering && <div className="fetch-shop-cart" key={product.id}>{product.cart}</div>}
                         </div>
                     </div>
+                    
                 ))}
             </div>
+            
         </div>
     )
 }
 export default ShopPageMain;
+
+// import {useState} from 'react';
+
+// const App = () => {
+//   const [isHovering, setIsHovering] = useState(false);
+
+//   const handleMouseOver = () => {
+//     setIsHovering(true);
+//   };
+
+//   const handleMouseOut = () => {
+//     setIsHovering(false);
+//   };
+
+//   return (
+//     <div>
+//       <div>
+//         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+//           Hover me
+//         </div>
+
+//         {isHovering && <h2>Hello world</h2>}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;

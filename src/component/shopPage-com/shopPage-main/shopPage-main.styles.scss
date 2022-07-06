@@ -12,7 +12,7 @@
         // opacity: 1;
         height: 18rem;
         width: 13.2rem;
-        
+
         object-fit: contain;
 
 
@@ -22,8 +22,6 @@
             width: 210px;
             height: 150px;
             cursor: pointer;
-
-
         }
 
         .name-sub {
@@ -44,15 +42,39 @@
                 margin-top: 5px;
             }
 
-            .fetch-shop-price{
+            .fetch-shop-price {
                 font-weight: 700;
                 margin-top: 10px;
             }
+
+            .fetch-shop-cart {
+                // background-color: black;
+                color: white;
+                margin-top: 7px;
+                // position: absolute;
+                bottom: 0%;
+                // font-size: 1.2rem;
+                // transition: all .4s ease-in-out;
+
+                // .fetch-shop-cart:active{
+                //     transform: translateY(5rem);
+                // }
+
+                &:hover {
+                    transition: all .2s cubic-bezier(.77, 0, .175, 1);
+                    transform: scale(1.0100);
+                    background-color: black;
+                    cursor: pointer;
+                }
+
+            }
         }
+
 
         &:hover {
             transition: all .5s cubic-bezier(.77, 0, .175, 1);
             transform: scale(1.0100);
+            // background-color: black;
 
 
 
@@ -62,4 +84,5 @@
             }
         }
     }
+
 }
