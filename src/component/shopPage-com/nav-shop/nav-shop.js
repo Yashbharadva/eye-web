@@ -3,6 +3,7 @@ import './nav-shop.styles.scss';
 import { AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
+import { Button, Drawer, Space } from 'antd';
 // import { db } from "../../../firebase/firebase.utils";
 // import { collection, getDocs } from "firebase/firestore";
 
@@ -12,11 +13,21 @@ const NavShop = () => {
     const history = useHistory();
     const [search, setSearch] = useState("");
     // const [product, setProduct] = useState("");
+    const [visible, setVisible] = useState(false);
 
     const handleSearch = (e) => {
         e.preventDefault();
         history.push(`/search?product=${search}`);
         setSearch("");
+    };
+    const [placement] = useState('right');
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onClose = () => {
+        setVisible(false);
     };
 
     // useEffect(() => {
@@ -51,6 +62,39 @@ const NavShop = () => {
     
     return (
         <div className="navbar-shop">
+
+<>
+                <Space>
+                    {/* <Radio.Group value={placement} onChange={onChange}>
+                        <Radio value="top">top</Radio>
+                        <Radio value="right">right</Radio>
+                        <Radio value="bottom">bottom</Radio>
+                        <Radio value="left">left</Radio>
+                    </Radio.Group> */}
+                    {/* <Button type="primary" onClick={showDrawer}>
+                        Open
+                    </Button> */}
+                </Space>
+                <Drawer
+                    // title="Drawer with extra actions"
+                    placement={placement}
+                    width={500}
+                    onClose={onClose}
+                    visible={visible}
+                    extra={
+                        <Space>
+                            <Button onClick={onClose}>Cancel</Button>
+                            <Button type="primary" onClick={onClose}>
+                                OK
+                            </Button>
+                        </Space>
+                    }
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+            </>
             <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")} />
             <ul className="navigation-bar">
             <ui className="home" onClick={() => history.push("/")}>Home</ui>
@@ -76,7 +120,7 @@ const NavShop = () => {
                 <div className="logo">
                     <AiOutlineSearch />
                 </div>
-                <div className="cart-bag">
+                <div className="cart-bag" onClick={showDrawer}>
                     <BiShoppingBag size="22px" />
                 </div>
                 {/* {!localStorage.getItem("Email") ? */}

@@ -113,24 +113,6 @@ const Navbar = () => {
             onClick={showDrawer}
             >
                 <BiShoppingBag size="22px" />
-
-                {/* <Drawer
-                    // title="Drawer with extra actions"
-                    placement={placement}
-                    width={500}
-                    onClose={onClose}
-                    visible={visible}
-                    extra={
-                        <Space>
-                            <Button onClick={onClose}>Cancel</Button>
-                            <Button type="primary" onClick={onClose}>
-                                OK
-                            </Button>
-                        </Space>
-                    }
-                >
-                    <p>Basket is Empty.</p>
-                </Drawer> */}
             </div>
             {/* {!localStorage.getItem("Email") ? */}
             <div className="sign-up-in">
