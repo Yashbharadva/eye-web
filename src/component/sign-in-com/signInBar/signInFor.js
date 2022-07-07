@@ -54,7 +54,7 @@ const Navigation = () => {
     return (
         <div className='all-box'>
             <div className="sign-up-bar">
-                <Form
+                <Form onSubmitCapture={handleLogin}
                     name="basic"
                     labelCol={{ span: 8, }}
                     wrapperCol={{ span: 11, }}

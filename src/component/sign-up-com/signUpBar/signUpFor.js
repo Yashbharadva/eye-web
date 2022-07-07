@@ -162,7 +162,7 @@ const Navigation = () => {
 
 
                 {/* <form onSubmit={handleSignup}> */}
-                <Form 
+                <Form onSubmitCapture={handleSignup}
                     name="basic"
                     labelCol={{
                         span: 8,
@@ -226,7 +226,7 @@ const Navigation = () => {
                             span: 9,
                         }}
                     >
-                        <Button type="primary" htmlType="submit" onClick={handleSignup}>
+                        <Button type="primary" htmlType="submit" >
                             Submit
                         </Button>
                     </Form.Item>

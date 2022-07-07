@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './navbar.styles.scss';
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
@@ -15,6 +15,10 @@ const Navbar = () => {
         history.push(`/search?product=${search}`);
         setSearch("");
     };
+
+    // const handlelogout = (e) => {
+    //     e.preventDefault();
+    // }
 
     const [visible, setVisible] = useState(false);
     const [placement] = useState('right');
@@ -36,7 +40,7 @@ const Navbar = () => {
     //   };
 
     // const remove = () => {
-    // localStorage.removeItem('Email');
+    // localStorage.removeItem('user-info');
     // };
     // const [items, setItems] = useState("");
 
@@ -45,7 +49,9 @@ const Navbar = () => {
     //     if (items) {
     //         setItems(items);
     //     }
-    // }, []);
+    // }, [items]);
+
+
     const history = useHistory()
     return (
         <div className="navbar">
@@ -139,10 +145,10 @@ const Navbar = () => {
                     <div className="log-out" onClick={remove}>
                         LogOut
                     </div>
-                ) */}
+                )
 
-            {/* {localStorage.getItem("user-info") ? (
-                <Link to="/authentication/sign-in" onClick={handlelogout}>
+            {localStorage.getItem("user-info") ? (
+                <Link to="/authentication/sign-in" >
                   Log Out
                 </Link>
               ) : (
