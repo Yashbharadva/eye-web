@@ -6,7 +6,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase/firebase.utils";
 
 // import './feProduct.styles.scss';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const FetchItem = () => {
 

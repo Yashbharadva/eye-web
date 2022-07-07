@@ -9,6 +9,7 @@ import './shopPage-main.styles.scss';
 const ShopPageMain = () => {
     const [product, setProduct] = useState("");
     const [isHovering, setIsHovering] = useState(false);
+    const [cartItem, setCartItem] = useState("");
 
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -48,7 +49,7 @@ const ShopPageMain = () => {
                             <div className="fetch-shop-name" key={product.id}>{product.name}</div>
                             <div className="fetch-shop-subName" key={product.id}>{product.subName}</div>
                             <div className="fetch-shop-price" key={product.id}>${product.price}.00</div>
-                            {isHovering && <div className="fetch-shop-cart" key={product.id}>{product.cart}</div>}
+                            {isHovering && <div className="fetch-shop-cart" key={product.id} >{product.cart}</div>}
                         </div>
                     </div>
                     

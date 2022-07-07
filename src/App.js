@@ -3,7 +3,7 @@ import signUp from './pages/sign-up/sign-up';
 import signIn from './pages/sign-in/sign-in';
 import ShopPage from './pages/shopPage/shopPage';
 import Search from './pages/search/search';
-import { HashRouter, Route, Router, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Details from './pages/details/details';
 

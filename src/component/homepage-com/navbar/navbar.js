@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './navbar.styles.scss';
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
-import { Button, Drawer, Radio, Space } from 'antd';
+import { Button, Drawer, Space } from 'antd';
+import 'antd/dist/antd.css';
 
 // import { Link } from "react-router-dom";
 
@@ -16,28 +17,26 @@ const Navbar = () => {
     };
 
     const [visible, setVisible] = useState(false);
-    const [placement, setPlacement] = useState('right');
-    const [open, setOpen] = React.useState(false);
+    const [placement] = useState('right');
 
     const showDrawer = () => {
         setVisible(true);
     };
 
-    const onChange = (e) => {
-        setPlacement(e.target.value);
-    };
+    // const onChange = (e) => {
+    //     setPlacement(e.target.value);
+    // };
 
     const onClose = () => {
         setVisible(false);
     };
-
     // const handleOpen = key => {
     //     setOpen(true);
     //     setPlacement(key);
     //   };
 
     // const remove = () => {
-        // localStorage.removeItem('Email');
+    // localStorage.removeItem('Email');
     // };
     // const [items, setItems] = useState("");
 
@@ -50,6 +49,38 @@ const Navbar = () => {
     const history = useHistory()
     return (
         <div className="navbar">
+            <>
+                <Space>
+                    {/* <Radio.Group value={placement} onChange={onChange}>
+                        <Radio value="top">top</Radio>
+                        <Radio value="right">right</Radio>
+                        <Radio value="bottom">bottom</Radio>
+                        <Radio value="left">left</Radio>
+                    </Radio.Group> */}
+                    {/* <Button type="primary" onClick={showDrawer}>
+                        Open
+                    </Button> */}
+                </Space>
+                <Drawer
+                    // title="Drawer with extra actions"
+                    placement={placement}
+                    width={500}
+                    onClose={onClose}
+                    visible={visible}
+                    extra={
+                        <Space>
+                            <Button onClick={onClose}>Cancel</Button>
+                            <Button type="primary" onClick={onClose}>
+                                OK
+                            </Button>
+                        </Space>
+                    }
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Drawer>
+            </>
             <img src="https://salinaka-ecommerce.web.app/images/logo-full.059e10fa5fedbfb65165e7565ed3936f.png" alt="" onClick={() => history.push("/")} />
             <ul className="navigation-bar">
                 <ui className="home" onClick={() => history.push("/")}>Home</ui>
@@ -72,10 +103,12 @@ const Navbar = () => {
             <div className="logo">
                 <AiOutlineSearch />
             </div>
-            <div className="cart-bag" onClick={showDrawer}>
+            <div className="cart-bag"
+            onClick={showDrawer}
+            >
                 <BiShoppingBag size="22px" />
 
-                <Drawer 
+                {/* <Drawer
                     // title="Drawer with extra actions"
                     placement={placement}
                     width={500}
@@ -83,19 +116,15 @@ const Navbar = () => {
                     visible={visible}
                     extra={
                         <Space>
-                        {/* <> */}
-                            <Button onClick={() => setOpen(false)}>Close</Button>
-                            <Button type="primary" onClick={() => setOpen(false)}>
-                                Clear Basket
+                            <Button onClick={onClose}>Cancel</Button>
+                            <Button type="primary" onClick={onClose}>
+                                OK
                             </Button>
-                            {/* </> */}
                         </Space>
                     }
                 >
                     <p>Basket is Empty.</p>
-                    {/* <p>Some contents...</p>
-                    <p>Some contents...</p> */}
-                </Drawer>
+                </Drawer> */}
             </div>
             {/* {!localStorage.getItem("Email") ? */}
             <div className="sign-up-in">

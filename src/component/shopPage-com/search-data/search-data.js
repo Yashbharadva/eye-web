@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import './nav-shop.styles.scss';
 import { AiOutlineSearch, AiOutlineFilter } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { Link, useHistory } from "react-router-dom";
-import { db } from "../../../firebase/firebase.utils";
-import { collection, getDocs } from "firebase/firestore";
+// import { db } from "../../../firebase/firebase.utils";
+// import { collection, getDocs } from "firebase/firestore";
 import './search-data.styles.scss';
 
 
@@ -13,7 +13,7 @@ import './search-data.styles.scss';
 const SearchData = () => {
     const history = useHistory();
     const [search, setSearch] = useState("");
-    const [product, setProduct] = useState("");
+    // const [product, setProduct] = useState("");
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -39,9 +39,9 @@ const SearchData = () => {
     //         })
     //         .catch(error => console.log(error.message))
     // }
-    const remove = () => {
+    // const remove = () => {
         // localStorage.removeItem('Email');
-    };
+    // };
     // const [items, setItems] = useState("");
 
     // useEffect(() => {
